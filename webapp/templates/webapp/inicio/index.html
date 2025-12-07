@@ -1,0 +1,262 @@
+{% extends "cabezal.html" %}
+{% load static %}
+
+{% block titulo_pagina %}
+<title>Inicio | Hotel AureaCuen - Cuenca, Ecuador</title>
+{% endblock %}
+
+{% block css_archivos %}
+<link rel="stylesheet" href="{% static 'webapp/css/inicio/inicio_index.css' %}">
+{% endblock %}
+
+{% block contenido_pagina %}
+<!-- ========================= -->
+<!-- HERO / PORTADA PRINCIPAL -->
+<!-- ========================= -->
+<header class="hero-section text-white d-flex align-items-center">
+    <div class="container text-start hero-content">
+        <h1 class="fw-bold display-4 mb-4" style="font-family: var(--heading-font); letter-spacing: 1px;">
+            Hotel AureaCuen
+        </h1>
+        <p class="lead mb-3" style="font-size: 1.5rem; font-weight: 300; letter-spacing: 0.5px;">
+            Elegancia Colonial en el Corazón de Cuenca
+        </p>
+        <p class="mb-5" style="font-size: 1.15rem; opacity: 0.95; max-width: 650px; line-height: 1.8;">
+            Descubre la hospitalidad andina donde la tradición se encuentra con el lujo contemporáneo.
+            Ubicados en el centro histórico de Cuenca, Patrimonio Cultural de la Humanidad.
+        </p>
+        <div class="hero-buttons mt-4">
+            <a href="{% url 'habitaciones' %}"
+                class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-semibold shadow-lg">
+                <i class="bi bi-calendar-check me-2"></i>Reservar Ahora
+            </a>
+            <a href="{% url 'habitaciones' %}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-semibold">
+                Ver Habitaciones
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ========================= -->
+<!-- SECCIÓN SOBRE NOSOTROS -->
+<!-- ========================= -->
+<section class="py-5 light-background" style="padding: 5rem 0 !important;">
+    <div class="container text-center">
+        <div class="mb-5">
+            <span class="text-uppercase"
+                style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; font-size: 0.9rem;">DESCUBRE</span>
+            <h2 class="mb-4 mt-2"
+                style="font-size: 2.5rem; font-family: var(--heading-font); font-weight: 700; color: var(--heading-color);">
+                Experiencia AureaCuen
+            </h2>
+        </div>
+        <p class="lead mb-5"
+            style="max-width: 850px; margin: 0 auto 3rem; font-size: 1.2rem; line-height: 1.8; color: var(--default-color);">
+            En el corazón de <strong style="color: var(--accent-color);">Cuenca</strong>, Patrimonio Cultural de la
+            Humanidad,
+            <strong style="color: var(--accent-color);">Hotel AureaCuen</strong> fusiona la arquitectura colonial con el
+            lujo contemporáneo.
+            Ubicado junto a los ríos Tomebamba y Yanuncay, ofrecemos una experiencia única
+            donde la tradición andina se encuentra con la comodidad moderna.
+        </p>
+
+        <div class="row mt-5 g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80"
+                        class="img-fluid rounded-3 shadow-sm mb-3" alt="Cuenca Colonial"
+                        style="height: 280px; width: 100%; object-fit: cover;" loading="lazy">
+                    <div class="px-2">
+                        <h5 class="mt-3 mb-2"
+                            style="font-family: var(--heading-font); font-weight: 600; color: var(--accent-color);">
+                            <i class="bi bi-geo-alt me-2"></i>Patrimonio Cultural
+                        </h5>
+                        <p style="color: var(--default-color); line-height: 1.7;">
+                            Ubicado en el centro histórico de Cuenca, a pasos de la Catedral Nueva,
+                            el Parque Calderón y los ríos que atraviesan la ciudad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80"
+                        class="img-fluid rounded-3 shadow-sm mb-3" alt="Arquitectura Colonial"
+                        style="height: 280px; width: 100%; object-fit: cover;">
+                    <div class="px-2">
+                        <h5 class="mt-3 mb-2"
+                            style="font-family: var(--heading-font); font-weight: 600; color: var(--accent-color);">
+                            <i class="bi bi-building me-2"></i>Arquitectura Colonial
+                        </h5>
+                        <p style="color: var(--default-color); line-height: 1.7;">
+                            Habitaciones diseñadas con elegancia, combinando detalles arquitectónicos
+                            tradicionales con todas las comodidades modernas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80"
+                        class="img-fluid rounded-3 shadow-sm mb-3" alt="Experiencia Andina"
+                        style="height: 280px; width: 100%; object-fit: cover;">
+                    <div class="px-2">
+                        <h5 class="mt-3 mb-2"
+                            style="font-family: var(--heading-font); font-weight: 600; color: var(--accent-color);">
+                            <i class="bi bi-heart me-2"></i>Cultura Andina
+                        </h5>
+                        <p style="color: var(--default-color); line-height: 1.7;">
+                            Sumérgete en la rica cultura cuencana con nuestra atención personalizada
+                            y servicios que honran las tradiciones locales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================= -->
+<!-- SECCIÓN SERVICIOS -->
+<!-- ========================= -->
+<section class="py-5" style="padding: 5rem 0 !important; background-color: #ffffff;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="text-uppercase"
+                style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; font-size: 0.9rem;">COMODIDADES</span>
+            <h2 class="mb-3 mt-2"
+                style="font-size: 2.5rem; font-family: var(--heading-font); font-weight: 700; color: var(--heading-color);">
+                Servicios Exclusivos
+            </h2>
+            <p class="text-muted" style="max-width: 700px; margin: 0 auto;">
+                Todo lo que necesitas para una estadía perfecta
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3 text-center">
+                <div class="card h-100 border-0 shadow-sm p-4 hover-card"
+                    style="transition: all 0.3s ease; border-radius: 12px;">
+                    <div class="card-body">
+                        <div class="mb-3" style="color: var(--accent-color);">
+                            <i class="bi bi-wifi display-4"></i>
+                        </div>
+                        <h5 class="mt-3 mb-2"
+                            style="font-family: var(--heading-font); font-weight: 600; color: var(--heading-color);">
+                            Wi-Fi Gratuito
+                        </h5>
+                        <p class="text-muted small mb-0">Conéctate en todo momento, desde cualquier rincón del hotel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 text-center">
+                <div class="card h-100 border-0 shadow-sm p-4 hover-card"
+                    style="transition: all 0.3s ease; border-radius: 12px;">
+                    <div class="card-body">
+                        <div class="mb-3" style="color: var(--accent-color);">
+                            <i class="bi bi-cup-hot display-4"></i>
+                        </div>
+                        <h5 class="mt-3 mb-2"
+                            style="font-family: var(--heading-font); font-weight: 600; color: var(--heading-color);">
+                            Desayuno Incluido
+                        </h5>
+                        <p class="text-muted small mb-0">Empieza el día con energía con nuestro buffet de sabores
+                            andinos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 text-center">
+                <div class="card h-100 border-0 shadow-sm p-4 hover-card"
+                    style="transition: all 0.3s ease; border-radius: 12px;">
+                    <div class="card-body">
+                        <div class="mb-3" style="color: var(--accent-color);">
+                            <i class="bi bi-water display-4"></i>
+                        </div>
+                        <h5 class="mt-3 mb-2"
+                            style="font-family: var(--heading-font); font-weight: 600; color: var(--heading-color);">
+                            Piscina
+                        </h5>
+                        <p class="text-muted small mb-0">Relájate bajo el sol en nuestra piscina al aire libre.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 text-center">
+                <div class="card h-100 border-0 shadow-sm p-4 hover-card"
+                    style="transition: all 0.3s ease; border-radius: 12px;">
+                    <div class="card-body">
+                        <div class="mb-3" style="color: var(--accent-color);">
+                            <i class="bi bi-car-front display-4"></i>
+                        </div>
+                        <h5 class="mt-3 mb-2"
+                            style="font-family: var(--heading-font); font-weight: 600; color: var(--heading-color);">
+                            Estacionamiento
+                        </h5>
+                        <p class="text-muted small mb-0">Amplio y seguro, disponible para todos nuestros huéspedes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================= -->
+<!-- SECCIÓN HABITACIONES -->
+<!-- ========================= -->
+<section class="py-5 light-background" style="padding: 5rem 0 !important;">
+    <div class="container text-center">
+        <div class="mb-5">
+            <span class="text-uppercase"
+                style="color: var(--accent-color); font-weight: 600; letter-spacing: 2px; font-size: 0.9rem;">ALOJAMIENTO</span>
+            <h2 class="mb-3 mt-2"
+                style="font-size: 2.5rem; font-family: var(--heading-font); font-weight: 700; color: var(--heading-color);">
+                Nuestras Habitaciones
+            </h2>
+            <p class="lead text-muted" style="max-width: 700px; margin: 0 auto;">
+                Elegancia colonial y confort moderno en cada detalle
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80"
+                        class="card-img-top" alt="Habitación Colonial" style="height: 240px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5>Habitación Colonial</h5>
+                        <p class="text-muted">Diseño tradicional cuencano con detalles arquitectónicos
+                            auténticos. Cama doble, baño privado y vista al centro histórico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80"
+                        class="card-img-top" alt="Habitación Ríos" style="height: 240px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5>Habitación Vista Ríos</h5>
+                        <p class="text-muted">Amplia habitación con balcón privado hacia los ríos
+                            Tomebamba y Yanuncay. Minibar y todas las comodidades modernas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80"
+                        class="card-img-top" alt="Suite Presidencial" style="height: 240px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5>Suite Presidencial</h5>
+                        <p class="text-muted">Lujo máximo con sala de estar, jacuzzi privado
+                            y terraza con vista panorámica de Cuenca. Experiencia inolvidable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

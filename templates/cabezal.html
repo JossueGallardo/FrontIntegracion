@@ -1,0 +1,363 @@
+<!-- SECCION CABEZAL -->
+
+{% load static %}
+<!-- SECCION CABEZAL -->
+<!-- SECCION CABEZAL -->
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% block titulo_pagina %}
+    {% endblock %}
+
+    {% block sobreescribir_css_archivos %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://code.jquery.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'webapp/css/general/general_index.css' %}">
+    <link rel="stylesheet" href="{% static 'webapp/css/general/grandoria_theme.css' %}">
+    <link rel="stylesheet" href="{% static 'webapp/css/modals.css' %}">
+    {% block css_archivos %}
+
+    {% endblock %}
+    {% endblock %}
+    {% block jvscript_archivos %}
+    {% block sobreescribir_jvscript_archivos %}
+    {% endblock %}
+    {% endblock %}
+
+    <!-- ESTILOS -->
+    <!-- ESTILOS -->
+    <!-- ESTILOS -->
+
+    <!-- ESTILOS -->
+    <!-- ESTILOS -->
+    <!-- ESTILOS -->
+
+</head>
+
+<body>
+    <!-- SECCION CABEZAL -->
+    <!-- SECCION CABEZAL -->
+    <!-- SECCION CABEZAL -->
+
+    <!-- CONTENIDO PAGINA WEB -->
+    <!-- CONTENIDO PAGINA WEB -->
+    <!-- CONTENIDO PAGINA WEB -->
+    {% block sobreescribir_contenido_pagina %}
+    <!-- MENU -->
+    <!-- MENU -->
+    <!-- MENU -->
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-lg cabezal_general shadow-sm sticky-top">
+        <div class="container menu_cabezal_general">
+
+            <a class="navbar-brand logo_cabezal_general fw-bold" href="{% url 'inicio' %}">
+                AureaCuen
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto" id="menu-dinamico">
+                    <!-- Aquí JS insertará el menú según el rol -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN MENU -->
+
+
+    <!-- MENU -->
+    <!-- MENU -->
+    <!-- MENU -->
+
+    {% block contenido_pagina %}
+    {% endblock %}
+    {% block bloquear_footer %}
+    <footer id="footer" class="footer position-relative dark-background">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6 footer-about">
+                        <a href="{% url 'inicio' %}" class="logo d-flex align-items-center">
+                            <span class="sitename"
+                                style="font-family: var(--heading-font); font-size: 26px; font-weight: 700; letter-spacing: 1px; color: #ffffff;">AureaCuen</span>
+                        </a>
+                        <div class="footer-contact pt-3">
+                            <p style="color: rgba(255, 255, 255, 0.8); font-size: 14px; margin-bottom: 8px;">Calle Larga
+                                7-93 y Presidente Borrero</p>
+                            <p style="color: rgba(255, 255, 255, 0.8); font-size: 14px; margin-bottom: 8px;">Cuenca,
+                                Azuay 010101</p>
+                            <p class="mt-3" style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px;"><strong
+                                    style="color: #ffffff;">Teléfono:</strong> <span
+                                    style="color: rgba(255, 255, 255, 0.9);">+593 7 283 7000</span></p>
+                            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px;"><strong
+                                    style="color: #ffffff;">Email:</strong> <span
+                                    style="color: rgba(255, 255, 255, 0.9);">info@aureacuen.com</span></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4 style="color: #ffffff !important;">Links Interesantes</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="{% url 'inicio' %}"
+                                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Inicio</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="{% url 'habitaciones' %}"
+                                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Habitaciones</a>
+                            </li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Sobre
+                                    Nosotros</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#"
+                                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Amenidades</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#"
+                                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4 style="color: #ffffff !important;">Nuestros Servicios</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#"
+                                    style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Habitaciones de
+                                    Lujo</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Restaurante
+                                    Gourmet</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Spa y
+                                    Bienestar</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Eventos y
+                                    Conferencias</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Servicio de
+                                    Conserjería</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4 style="color: #ffffff !important;">Explora Cuenca</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Centro
+                                    Histórico</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Museos y
+                                    Galerías</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Río
+                                    Tomebamba</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Mercados
+                                    Artesanales</a></li>
+                            <li style="padding: 8px 0; display: flex; align-items: center;"><i
+                                    class="bi bi-chevron-right"
+                                    style="padding-right: 5px; font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i><a
+                                    href="#" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Iglesias
+                                    Coloniales</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright text-center"
+            style="padding: 25px 0; background-color: rgba(0, 0, 0, 0.2); border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <div
+                class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+                <div class="d-flex flex-column align-items-center align-items-lg-start">
+                    <div style="color: rgba(255, 255, 255, 0.9) !important;">
+                        © Copyright <strong><span style="color: #ffffff !important;">Todos los derechos
+                                reservados</span></strong>.
+                    </div>
+                    <div class="credits"
+                        style="margin-top: 5px; font-size: 13px; color: rgba(255, 255, 255, 0.7) !important;">
+                        Desarrollado por <a href="#"
+                            style="color: rgba(255, 255, 255, 0.9) !important; text-decoration: underline;">Jossue
+                            Gallardo</a>
+                    </div>
+                </div>
+
+                <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+                    <a href="#"
+                        style="background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8); width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; transition: all 0.3s ease; text-decoration: none;"><i
+                            class="bi bi-twitter-x"></i></a>
+                    <a href="#"
+                        style="background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8); width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; transition: all 0.3s ease; text-decoration: none;"><i
+                            class="bi bi-facebook"></i></a>
+                    <a href="#"
+                        style="background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8); width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; transition: all 0.3s ease; text-decoration: none;"><i
+                            class="bi bi-instagram"></i></a>
+                    <a href="#"
+                        style="background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8); width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;"><i
+                            class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+    {% endblock %}
+
+    {% block sobreescribir_jvscript_archivos_defer %}
+    <!-- SCRIPT EXTERNO -->
+    <!-- SCRIPT EXTERNO -->
+    <!-- SCRIPT EXTERNO -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{% static 'webapp/js/modals.js' %}"></script>
+    <!-- SCRIPT EXTERNO -->
+    <!-- SCRIPT EXTERNO -->
+    <!-- SCRIPT EXTERNO -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const menu = document.getElementById("menu-dinamico");
+
+            const id = localStorage.getItem("usuario_id");
+            const nombre = localStorage.getItem("usuario_nombre");
+            const rol = localStorage.getItem("usuario_rol");
+
+            menu.innerHTML = ""; // limpia el menú
+
+            // Si NO hay usuario, mostrar botón de login
+            if (!id) {
+                menu.innerHTML = `
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'habitaciones' %}">Habitaciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-primary ms-lg-3" href="{% url 'login' %}">Iniciar sesión</a>
+            </li>
+        `;
+                return;
+            }
+
+            // Si hay usuario, construimos menú según su rol
+            let items = `
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'habitaciones' %}">Habitaciones</a>
+        </li>
+    `;
+
+            if (rol === "1") {
+                // Usuario normal
+                items += `
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'usuario_reservas' %}">Mis reservas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'usuario_pagos' %}">Pagos</a>
+            </li>
+        `;
+            }
+
+            if (rol === "2") {
+                // Administrador
+                items += `
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin_dashboard' %}">Panel Administrador</a>
+            </li>
+        `;
+            }
+
+            // Botón de logout
+            items += `
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-semibold" href="#" data-bs-toggle="dropdown">
+                ${nombre}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item text-danger" href="#" id="logout-btn">Cerrar sesión</a></li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'usuario_perfil' %}">Mi perfil</a>
+    </li>
+            </ul>
+        </li>
+    `;
+
+            menu.innerHTML = items;
+
+            // Evento logout
+            document.getElementById("logout-btn").addEventListener("click", function () {
+                localStorage.clear();
+                window.location.href = "{% url 'inicio' %}";
+            });
+            // Reescribir enlace cuando exista en el DOM
+            setTimeout(() => {
+                const enlaces = document.querySelectorAll("a.nav-link");
+
+                enlaces.forEach(a => {
+                    if (a.textContent.trim() === "Mis reservas") {
+                        a.href = `/usuario/reservas/?uid=${id}`;
+                    }
+                });
+            }, 10);  // pequeño delay para asegurar que el menú ya está construido
+
+        });
+    </script>
+
+    {% block jvscript_archivos_defer %}
+    {% endblock %}
+    {% endblock %}
+</body>
+
+</html>

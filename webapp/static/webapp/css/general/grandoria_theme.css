@@ -1,0 +1,536 @@
+/* ============================================================
+   🏨 TEMA GRANDORIA - BASADO EN GRANDORIA TEMPLATE
+   ============================================================ */
+
+/* Font & Color Variables */
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Josefin Sans", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+  
+  /* Global Colors */
+  --background-color: #ffffff;
+  --default-color: #40524d;
+  --heading-color: #0d1f1a;
+  --accent-color: #2f5d50;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+  
+  /* Nav Menu Colors */
+  --nav-color: rgba(255, 255, 255, 0.6);
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #40524d;
+  --nav-dropdown-hover-color: #2f5d50;
+  
+  /* Header */
+  --header-background: #436e62;
+  
+  /* Bootstrap Override */
+  --bs-primary: #2f5d50 !important;
+  --bs-primary-rgb: 47, 93, 80 !important;
+  --bs-secondary: #436e62 !important;
+  --bs-success: #2f5d50 !important;
+  --bs-info: #436e62 !important;
+}
+
+/* Color Presets */
+.light-background {
+  --background-color: #f1f6f5;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #2f5d50;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #2e2b28;
+  --contrast-color: #ffffff;
+}
+
+/* ================== GENERAL ================== */
+body {
+  color: var(--default-color);
+  background-color: #ffffff !important;
+  font-family: var(--default-font);
+}
+
+/* Forzar que no haya fondos azules en ninguna parte */
+section, .section, main, .hero-section {
+  background-color: transparent;
+}
+
+section.light-background {
+  background-color: #f1f6f5 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+/* ================== HEADER/NAVBAR ================== */
+.cabezal_general {
+  background-color: var(--header-background) !important;
+  border-bottom: none !important;
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+.menu_cabezal_general {
+  padding: 0.75rem 0;
+}
+
+.logo_cabezal_general {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  font-family: var(--heading-font) !important;
+  color: var(--contrast-color) !important;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.logo_cabezal_general:hover {
+  transform: scale(1.05);
+  color: var(--contrast-color) !important;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(145, 143, 143, 0.85) !important;
+  font-family: var(--nav-font) !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  padding: 18px 15px !important;
+  transition: 0.3s;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.navbar .btn {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 999px !important;
+  padding: 10px 19px !important;
+  font-weight: 600 !important;
+  color: var(--contrast-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar .btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--contrast-color) !important;
+  transform: translateY(-2px);
+}
+
+/* ================== BOTONES ================== */
+.btn-primary {
+  background-color: var(--accent-color) !important;
+  border: 1px solid var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+  border-radius: 4px !important;
+  padding: 0.875rem 2rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: color-mix(in srgb, var(--accent-color), black 10%) !important;
+  border-color: color-mix(in srgb, var(--accent-color), black 10%) !important;
+  color: var(--contrast-color) !important;
+  transform: translateY(-1px);
+}
+
+.btn-success {
+  background-color: var(--accent-color) !important;
+  border: 1px solid var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+}
+
+.btn-success:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 10%) !important;
+  border-color: color-mix(in srgb, var(--accent-color), black 10%) !important;
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--accent-color) !important;
+    color: var(--accent-color) !important;
+    background: transparent !important;
+    border-radius: 50px !important;
+    padding: 0.875rem 2rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%) !important;
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+    transform: translateY(-2px);
+}
+
+/* ================== BADGES ================== */
+.badge.bg-primary,
+.badge.bg-primary-subtle {
+  background-color: var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+}
+
+.badge.bg-success {
+  background-color: var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+}
+
+.badge.text-primary {
+  color: var(--accent-color) !important;
+}
+
+/* ================== TEXTOS ================== */
+.text-primary {
+  color: var(--accent-color) !important;
+}
+
+.text-success {
+  color: var(--accent-color) !important;
+}
+
+/* ================== BACKGROUNDS ================== */
+.bg-primary {
+  background-color: var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+}
+
+.bg-success {
+  background-color: var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+}
+
+.bg-primary-subtle {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%) !important;
+}
+
+/* ================== FOOTER ================== */
+.footer {
+  background-color: #2f5d50 !important;
+  color: #ffffff !important;
+  font-size: 14px;
+  position: relative;
+  border-top: none !important;
+  border-radius: 0 !important;
+}
+
+.footer.dark-background {
+  background-color: #2f5d50 !important;
+  color: #ffffff !important;
+}
+
+.footer .footer-top {
+  background-color: #2f5d50 !important;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.footer h4 {
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  color: #ffffff !important;
+  font-family: var(--heading-font);
+  letter-spacing: 0.5px;
+}
+
+.footer h4::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffffff !important;
+  padding-left: 5px;
+  text-decoration: none !important;
+}
+
+.footer-about p {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.footer-modern {
+  background-color: #2f5d50 !important;
+  color: #ffffff !important;
+}
+
+.footer-modern .footer-top {
+  background-color: #2f5d50 !important;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.footer-modern h4 {
+  color: #ffffff !important;
+}
+
+.footer .social-links a,
+.footer-modern .social-links a,
+.footer-social a {
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1;
+  padding: 0;
+  margin-right: 8px;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer .social-links a:hover,
+.footer-modern .social-links a:hover,
+.footer-social a:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.footer .copyright {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer .copyright a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: underline;
+}
+
+.footer .copyright a:hover {
+  color: #ffffff !important;
+}
+
+/* ================== FORM CONTROLS ================== */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 0.125rem color-mix(in srgb, var(--accent-color), transparent 85%) !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* ================== CARDS ================== */
+.card {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 6px;
+}
+
+.card:hover {
+  box-shadow: 0 15px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* ================== SPINNER ================== */
+.spinner-border.text-primary {
+  color: var(--accent-color) !important;
+}
+
+/* ================== ALERTS ================== */
+.alert-primary {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.alert-success {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* ================== MODALS ================== */
+.modal-header.bg-primary {
+  background-color: var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+}
+
+/* ================== LINKS ================== */
+a.text-primary,
+a.text-primary:hover {
+  color: var(--accent-color) !important;
+}
+
+/* ================== PAGINATION ================== */
+.page-link {
+  color: var(--accent-color) !important;
+}
+
+.page-item.active .page-link {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.page-link:hover {
+  color: color-mix(in srgb, var(--accent-color), black 10%) !important;
+}
+
+/* ================== DROPDOWN ================== */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--accent-color) !important;
+}
+
+/* ================== NAV TABS ================== */
+.nav-tabs .nav-link.active {
+  color: var(--accent-color) !important;
+  border-bottom-color: var(--accent-color) !important;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+/* ================== PROGRESS BARS ================== */
+.progress-bar {
+  background-color: var(--accent-color) !important;
+}
+
+/* ================== TABLES ================== */
+.table-primary {
+  --bs-table-bg: color-mix(in srgb, var(--accent-color), transparent 90%);
+  --bs-table-striped-bg: color-mix(in srgb, var(--accent-color), transparent 85%);
+  --bs-table-active-bg: color-mix(in srgb, var(--accent-color), transparent 80%);
+  --bs-table-hover-bg: color-mix(in srgb, var(--accent-color), transparent 75%);
+  color: var(--heading-color);
+}
+
+/* ================== LIST GROUP ================== */
+.list-group-item.active {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* ================== BREADCRUMB ================== */
+.breadcrumb-item.active {
+  color: var(--accent-color) !important;
+}
+
+/* ================== ACCORDION ================== */
+.accordion-button:not(.collapsed) {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%) !important;
+  color: var(--accent-color) !important;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--accent-color), transparent 75%) !important;
+}
+
+/* ================== HERO SECTION ================== */
+.hero-section {
+  background: linear-gradient(135deg, var(--header-background) 0%, var(--accent-color) 100%);
+  color: var(--contrast-color);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1920&q=80') center/cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section h4,
+.hero-section h5,
+.hero-section h6 {
+  color: var(--contrast-color);
+}
+
+/* ================== SECTIONS ================== */
+section {
+  padding: 80px 0;
+  background-color: var(--background-color);
+}
+
+section.light-background {
+  --background-color: #f1f6f5;
+  --surface-color: #ffffff;
+  background-color: #f1f6f5;
+}
+
+section.dark-background {
+  --background-color: #2f5d50;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #2e2b28;
+  --contrast-color: #ffffff;
+  background-color: #2f5d50;
+  color: #ffffff;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .logo_cabezal_general {
+    font-size: 24px !important;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 12px 15px !important;
+  }
+}
+

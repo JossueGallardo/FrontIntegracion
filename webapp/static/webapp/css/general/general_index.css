@@ -1,0 +1,88 @@
+:root {
+    --texto-claro: #ffffff;
+    --color-principal: #2f5d50;      /* Accent color */
+    --color-secundario: #436e62;     /* Header background */
+    --color-accent: #2f5d50;         /* Accent color */
+    --color-crema: #f1f6f5;          /* Light background */
+}
+
+.cabezal_general {
+    background-color: var(--header-background, #436e62) !important;
+    border-bottom: none;
+}
+
+.menu_cabezal_general {
+    padding: 0.75rem 0;
+}
+
+.logo_cabezal_general {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+    color: #ffffff !important;
+}
+
+.logo_cabezal_general:hover {
+    transform: scale(1.05);
+    color: #ffffff !important;
+}
+
+/* Enlaces del menú */
+.navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.85) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* Botón de reserva */
+.navbar .btn {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    color: #ffffff !important;
+}
+
+.navbar .btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    color: #ffffff !important;
+}
+
+.navbar .btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    color: var(--contrast-color);
+}
+
+/* Footer styles moved to grandoria_theme.css */
+
+.footer-links a {
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-social a {
+    color: #ffffff;
+    font-size: 1.4rem;
+    transition: 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #dfe6ff;
+    transform: translateY(-3px);
+}

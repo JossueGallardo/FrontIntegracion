@@ -1,0 +1,316 @@
+/* =============================
+   PALETA Y VARIABLES GLOBALES
+   Basado en Grandoria Template
+   ============================= */
+:root {
+    --color-principal: #2f5d50;      /* Accent color */
+    --color-secundario: #436e62;     /* Header background */
+    --color-accent: #2f5d50;         /* Accent color */
+    --color-texto: #40524d;          /* Default color */
+    --color-heading: #0d1f1a;        /* Heading color */
+    --color-shadow: rgba(13, 31, 26, 0.15);
+}
+
+/* =============================
+   HERO SECTION
+   ============================= */
+.hero-section {
+    min-height: 85vh;
+    background: linear-gradient(135deg, #2f5d50 0%, #1a3a30 100%) !important;
+    background-image: 
+        linear-gradient(135deg, rgba(47, 93, 80, 0.88) 0%, rgba(26, 58, 48, 0.92) 100%),
+        url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1920&q=80') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: multiply !important;
+    background-repeat: no-repeat !important;
+    background-color: #2f5d50 !important;
+    display: flex;
+    align-items: center;
+    color: white !important;
+    text-shadow: 0px 2px 20px rgba(0,0,0,0.4);
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(47, 93, 80, 0.4) 0%, rgba(26, 58, 48, 0.6) 100%);
+    background-color: #2f5d50;
+    z-index: 0;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-family: var(--heading-font, "Josefin Sans", sans-serif);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+}
+
+.hero-section .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-family: var(--heading-font, "Josefin Sans", sans-serif);
+    color: var(--contrast-color, white);
+}
+
+@media (max-width: 992px) {
+    .hero-section .hero-content h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+.hero-section .hero-content .lead {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.hero-section .hero-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-section .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.hero-section .hero-buttons .btn {
+    padding: 1rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.hero-section .hero-buttons .btn-primary {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border-color: var(--accent-color);
+}
+
+.hero-section .hero-buttons .btn-primary:hover {
+    background-color: color-mix(in srgb, var(--accent-color), black 10%);
+    border-color: color-mix(in srgb, var(--accent-color), black 10%);
+    transform: translateY(-2px);
+}
+
+.hero-section .hero-buttons .btn-outline-primary {
+    background-color: transparent;
+    color: var(--contrast-color);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-section .hero-buttons .btn-outline-primary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* =============================
+   TÍTULOS DE SECCIÓN
+   ============================= */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    font-family: var(--heading-font, "Josefin Sans", sans-serif);
+}
+
+/* =============================
+   SECCIÓN SOBRE NOSOTROS
+   ============================= */
+section p.lead {
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--color-texto);
+}
+
+/* =============================
+   TARJETAS DE SOBRE NOSOTROS
+   ============================= */
+.img-fluid {
+    border-radius: 1rem;
+}
+
+.shadow-sm {
+    transition: 0.3s ease-in-out;
+}
+
+.shadow-sm:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px var(--color-shadow) !important;
+}
+
+/* =============================
+   SERVICIOS — CARDS
+   ============================= */
+.card {
+    border-radius: 1rem !important;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%) !important;
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--default-color), transparent 85%);
+    transition: 0.3s ease;
+    background: var(--surface-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px color-mix(in srgb, var(--default-color), transparent 75%);
+}
+
+.card-body {
+    padding-top: 1.5rem;
+}
+
+.card-body i {
+    font-size: 3rem;
+    color: var(--accent-color, var(--color-accent));
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card:hover .card-body i {
+    transform: scale(1.1);
+    color: var(--accent-color, var(--color-secundario));
+}
+
+.card-body h5 {
+    font-weight: 700;
+    margin-top: 1rem;
+    color: var(--color-heading);
+    font-family: var(--heading-font, "Josefin Sans", sans-serif);
+}
+
+.card-body p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* =============================
+   HABITACIONES — CARDS
+   ============================= */
+.card-img-top {
+    height: 240px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    object-fit: cover;
+}
+
+.card-body h5 {
+    font-size: 1.2rem;
+}
+
+.text-muted {
+    font-size: 0.9rem;
+}
+
+/* =============================
+   HOVER EFFECTS
+   ============================= */
+.hover-card {
+    transition: all 0.3s ease !important;
+}
+
+.hover-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 40px rgba(47, 93, 80, 0.15) !important;
+}
+
+.feature-card {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+.feature-card img {
+    transition: transform 0.5s ease;
+    overflow: hidden;
+}
+
+/* =============================
+   BOTÓN OUTLINE LIGHT
+   ============================= */
+.btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    color: #ffffff !important;
+    background: transparent !important;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    color: #ffffff !important;
+}
+
+/* =============================
+   RESPONSIVE
+   ============================= */
+@media (max-width: 992px) {
+    .hero-section .hero-content h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh;
+        text-align: center;
+        padding: 40px 0;
+    }
+    .hero-section .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section .hero-content p {
+        max-width: 100% !important;
+    }
+    .hero-section .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+    .hero-section .hero-buttons .btn {
+        width: 100%;
+    }
+}
