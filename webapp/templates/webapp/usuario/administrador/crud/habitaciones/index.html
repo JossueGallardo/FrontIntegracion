@@ -534,7 +534,8 @@
 
         crudCreate(URL_CREATE, data, () => {
             $("#modalCrearHabitacion").modal("hide");
-            cargarHabitaciones(CURRENT_PAGE);
+            // Limpiar filtros y recargar desde la página 1 para ver la habitación recién creada
+            limpiarFiltros();
         });
     }
 
@@ -755,17 +756,46 @@
         }
 
         // Si hay filtros, cargar TODAS las habitaciones y filtrar en cliente
-        $.get(URL_LIST + "?page=1&page_size=1000", function (resp) {
+        $.get(URL_LIST + "?page=1&page_size=1200", function (resp) {
             if (resp.status === "ok") {
                 ALL_HABITACIONES = resp.data || [];
             } else {
                 ALL_HABITACIONES = resp.data || resp || [];
             }
+
+            console.log("Total habitaciones cargadas:", ALL_HABITACIONES.length);
+            console.log("Habitaciones:", ALL_HABITACIONES);
+
             aplicarFiltros();
 
-            // Mostrar info de resultados filtrados
-            const cantidadFiltrada = $("#tablaHabitaciones tbody tr").length;
-            $("#infoPagina").text(`${cantidadFiltrada} resultados encontrados`);
+            // Mostrar info de resultados filtrados - CORREGIDO para contar datos reales
+            const filtroId = $("#filtro_id").val().trim().toUpperCase();
+            const filtroNombre = $("#filtro_nombre").val().trim().toLowerCase();
+            const filtroCapacidad = $("#filtro_capacidad").val();
+            const filtroTipo = $("#filtro_tipo").val();
+            const filtroEstado = $("#filtro_estado").val();
+
+            // Debug: Mostrar valores de filtros activos
+            console.log("🔍 Filtros activos:", {
+                filtroId: filtroId,
+                filtroNombre: filtroNombre,
+                filtroCapacidad: filtroCapacidad,
+                filtroTipo: filtroTipo,
+                filtroEstado: filtroEstado
+            });
+
+            const datosFiltrados = ALL_HABITACIONES.filter(r => {
+                if (filtroId && !String(r.IdHabitacion || "").toUpperCase().includes(filtroId)) return false;
+                if (filtroNombre && !String(r.NombreHabitacion || "").toLowerCase().includes(filtroNombre)) return false;
+                if (filtroCapacidad && parseInt(r.CapacidadHabitacion) !== parseInt(filtroCapacidad)) return false;
+                if (filtroTipo && String(r.IdTipoHabitacion) !== filtroTipo) return false;
+                if (filtroEstado === "activo" && !r.EstadoActivoHabitacion) return false;
+                if (filtroEstado === "inactivo" && r.EstadoActivoHabitacion) return false;
+                return true;
+            });
+
+            console.log("Resultados filtrados:", datosFiltrados.length);
+            $("#infoPagina").text(`${datosFiltrados.length} resultados encontrados`);
             $("#btnAnterior, #btnSiguiente").prop("disabled", true);
         });
     }

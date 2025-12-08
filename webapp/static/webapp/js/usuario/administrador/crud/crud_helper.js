@@ -1,7 +1,7 @@
 /* ============================================================
    ⚙️ INYECTAR DEPENDENCIAS (CSS Y JS)
    ============================================================ */
-(function() {
+(function () {
     // Inyectar CSS de modales si no existe
     if (!document.querySelector('link[href*="modals.css"]')) {
         const link = document.createElement('link');
@@ -160,13 +160,13 @@ function crudCreate(url, data, onSuccess) {
     $.post(url, data)
         .done(resp => {
             crudNotify("success", resp.message || "Creado correctamente.");
-            // Mostrar alerta modal de confirmación
+
+            // Ejecutar callback INMEDIATAMENTE para recargar la tabla
+            if (onSuccess) onSuccess(resp);
+
+            // Mostrar alerta modal de confirmación DESPUÉS de recargar
             if (typeof showAlert !== 'undefined') {
-                showAlert("✅ Éxito", resp.message || "Registro creado correctamente.", "success", () => {
-                    if (onSuccess) onSuccess(resp);
-                });
-            } else {
-                if (onSuccess) onSuccess(resp);
+                showAlert("✅ Éxito", resp.message || "Registro creado correctamente.", "success");
             }
         })
         .fail(xhr => {
@@ -185,13 +185,13 @@ function crudUpdate(url, data, onSuccess) {
     $.post(url, data)
         .done(resp => {
             crudNotify("success", resp.message || "Actualizado correctamente.");
-            // Mostrar alerta modal de confirmación
+
+            // Ejecutar callback INMEDIATAMENTE para recargar la tabla
+            if (onSuccess) onSuccess(resp);
+
+            // Mostrar alerta modal de confirmación DESPUÉS de recargar
             if (typeof showAlert !== 'undefined') {
-                showAlert("✅ Éxito", resp.message || "Registro actualizado correctamente.", "success", () => {
-                    if (onSuccess) onSuccess(resp);
-                });
-            } else {
-                if (onSuccess) onSuccess(resp);
+                showAlert("✅ Éxito", resp.message || "Registro actualizado correctamente.", "success");
             }
         })
         .fail(xhr => {
@@ -210,13 +210,13 @@ function crudDelete(url, onSuccess) {
     $.post(url)
         .done(resp => {
             crudNotify("success", resp.message || "Eliminado correctamente.");
-            // Mostrar alerta modal de confirmación
+
+            // Ejecutar callback INMEDIATAMENTE para recargar la tabla
+            if (onSuccess) onSuccess(resp);
+
+            // Mostrar alerta modal de confirmación DESPUÉS de recargar
             if (typeof showAlert !== 'undefined') {
-                showAlert("✅ Éxito", resp.message || "Registro eliminado correctamente.", "success", () => {
-                    if (onSuccess) onSuccess(resp);
-                });
-            } else {
-                if (onSuccess) onSuccess(resp);
+                showAlert("✅ Éxito", resp.message || "Registro eliminado correctamente.", "success");
             }
         })
         .fail(xhr => {

@@ -42,14 +42,20 @@ class HabitacionesListAjaxView(View):
             start_time = time.time()
 
             page = int(request.GET.get("page", 1))
-            # Permitir page_size desde la URL (máximo 1000 para evitar abusos)
-            page_size = min(int(request.GET.get("page_size", 20)), 1000)
+            # Permitir page_size desde la URL (máximo 2000 para evitar abusos)
+            page_size = min(int(request.GET.get("page_size", 20)), 2000)
 
             # Obtener todas las habitaciones con timeout para evitar cuelgues
             data = api.obtener_habitaciones()
 
             if not isinstance(data, list):
                 data = []
+            
+            # Debug: Log para ver qué habitaciones se están devolviendo
+            logger.info(f"[HAB LIST DEBUG] Total habitaciones desde SOAP: {len(data)}")
+            if data:
+                ids = [h.get('IdHabitacion') for h in data if isinstance(h, dict)]
+                logger.info(f"[HAB LIST DEBUG] IDs de habitaciones: {ids}")
 
             # Si hay muchos registros, cargar en paralelo (opcional)
             total = len(data)
@@ -139,7 +145,7 @@ class HabitacionesCreateAjaxView(View):
                 request.POST.get("PrecioNormalHabitacion") or None,
                 request.POST.get("PrecioActualHabitacion") or None,
                 request.POST.get("CapacidadHabitacion") or None,
-                request.POST.get("EstadoHabitacion") or None,
+                int(request.POST.get("EstadoHabitacion")) if request.POST.get("EstadoHabitacion") else 1,
                 request.POST.get("EstadoActivoHabitacion") == "true"
             )
 
@@ -190,7 +196,7 @@ class HabitacionesUpdateAjaxView(View):
                 request.POST.get("PrecioNormalHabitacion") or None,
                 request.POST.get("PrecioActualHabitacion") or None,
                 request.POST.get("CapacidadHabitacion") or None,
-                request.POST.get("EstadoHabitacion") or None,
+                int(request.POST.get("EstadoHabitacion")) if request.POST.get("EstadoHabitacion") else 1,
                 estado
             )
 
